@@ -1,0 +1,14 @@
+from difflib import SequenceMatcher
+def longestsubstring(s1,s2):
+     seqmatch=SequenceMatcher(None,s1,s2)
+     match= seqmatch.findlongestmatch(0,len(s1),0,len(s2))
+     if (match.size!=0):
+         return (s1[match.a:match.a+match.size])
+     else :
+         return('longest common substring not  present')
+         
+s1=input("enter string1")
+s2=input("enter string2")
+print("originalstring:\n" ,s1+"\n",s2)
+print("\n common string\n")
+print(longestsubstring(s1,s2))
